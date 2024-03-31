@@ -1,5 +1,6 @@
 import os
 import urllib.request
+from torchvision import datasets
 
 def download_file(url, file_path):
     """
@@ -25,11 +26,29 @@ def download_file(url, file_path):
     else:
         print("File already exists.")
 
+def download_mnist(data_dir='./data/'):
+    """
+    Download the MNIST Dataset and save it to the specified data directory.
+
+    Parameters:
+        data_dir (str): The directory where the MNIST Dataset will be saved.
+    """
+    # Download the MNIST training set
+    mnist_trainset = datasets.MNIST(root=data_dir, train=True, download=True)
+    print("MNIST training set downloaded successfully.")
+
+    # Download the MNIST test set
+    mnist_testset = datasets.MNIST(root=data_dir, train=False, download=True)
+    print("MNIST test set downloaded successfully.")
+
 def main():
     url = 'http://www.cs.nyu.edu/~roweis/data/binaryalphadigs.mat'
     project_dir = 'Projet'
     file_path = os.path.join(project_dir, 'data', 'binaryalphadigs.mat')
     download_file(url, file_path)
+
+    # Download the MNIST Dataset
+    download_mnist(data_dir=os.path.join(project_dir, 'data'))
 
 if __name__ == "__main__":
     main()

@@ -5,7 +5,7 @@
 | Last Name | First Name | Email                            |
 | --------- | ---------- | -------------------------------- |
 | SAINT     | Nicolas    | nicolas.saint@polytechnique.edu |
-| Raffi     | Cyprien    | cyprien.raffi@polytechnique.edu |
+| RAFFI    | Cyprien    | cyprien.raffi@polytechnique.edu |
 
 ## Project Overview
 
